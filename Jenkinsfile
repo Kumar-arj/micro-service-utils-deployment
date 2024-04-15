@@ -1,5 +1,5 @@
 def label = "shopagent"
-  def env = "test"
+  def env = "stage"
   podTemplate(label: label, yaml: """
   apiVersion: v1
   kind: Pod
