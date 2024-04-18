@@ -27,7 +27,7 @@ def label = "shopagent"
                 withCredentials([usernamePassword(credentialsId: 'nexuslogin', usernameVariable: 'username', passwordVariable: 'password')]) {
                     sh '/usr/local/bin/helm repo add sock-shop-helm-local http://nexus.k4m.in/repository/sock-shop-helm-local/ --username $username --password $password'
                     sh "/usr/local/bin/helm repo update"
-                    sh "/usr/local/bin/helm upgrade  --install --force micro-services-utils  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-user"
+                    sh "/usr/local/bin/helm upgrade  --install --force micro-service-utils  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-service-user"
                     sh "/usr/local/bin/helm list -a --namespace ${env}"
                     sh "rm -rf values.yaml"
                       
